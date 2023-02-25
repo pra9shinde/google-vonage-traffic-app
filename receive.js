@@ -80,60 +80,6 @@ async function getTrafficDetails({ origins, destinations }) {
     let response = await axios(config);
     response = await response.data;
 
-    // const response = {
-    //   routes: [
-    //     {
-    //       bounds: {
-    //         northeast: { lat: 41.8781139, lng: -87.6297872 },
-    //         southwest: { lat: 34.0523525, lng: -118.2435717 },
-    //       },
-    //       copyrights: "Map data ©2022 Google, INEGI",
-    //       legs: [
-    //         {
-    //           distance: { text: "579 km", value: 932311 },
-    //           duration: { text: "8 hours 48 mins", value: 31653 },
-    //           duration_in_traffic: { text: "8 hours 55 mins", value: 932311 },
-    //           end_address: "Panvel",
-    //           end_location: { lat: 37.0842449, lng: -94.513284 },
-    //           start_address: "Mumbai",
-    //           start_location: { lat: 41.8781139, lng: -87.6297872 },
-    //           steps: [],
-    //           traffic_speed_entry: [],
-    //           via_waypoint: [],
-    //         },
-    //         {
-    //           distance: { text: "217 km", value: 349512 },
-    //           duration: { text: "3 hours 17 mins", value: 11799 },
-    //           duration_in_traffic: { text: "3 hours 40 mins", value: 932311 },
-    //           end_address: "Alephata",
-    //           end_location: { lat: 35.4675612, lng: -97.5164077 },
-    //           start_address: "Panvel",
-    //           start_location: { lat: 37.0842449, lng: -94.513284 },
-    //           steps: [],
-    //           traffic_speed_entry: [],
-    //           via_waypoint: [],
-    //         },
-    //         {
-    //           distance: { text: "1,328 km", value: 2137682 },
-    //           duration: { text: "19 hours 28 mins", value: 70097 },
-    //           duration_in_traffic: { text: "20 hours 22 mins", value: 932311 },
-    //           end_address: "Pune",
-    //           end_location: { lat: 34.0523525, lng: -118.2435717 },
-    //           start_address: "Alephata",
-    //           start_location: { lat: 35.4675612, lng: -97.5164077 },
-    //           steps: [],
-    //           traffic_speed_entry: [],
-    //           via_waypoint: [],
-    //         },
-    //       ],
-    //       summary: "I-55 S and I-44",
-    //       warnings: [],
-    //       waypoint_order: [0, 1],
-    //     },
-    //   ],
-    //   status: "OK",
-    // };
-
     const routes = getRoutes(response);
     return routes.join(" \n\n ");
   } catch (e) {
